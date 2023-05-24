@@ -1,6 +1,0 @@
-com/amadeus/digital/cli/commands/TestSay.class
-com/amadeus/digital/cli/commands/gh/TestCommit.class
-com/amadeus/digital/cli/commands/TestMain.class
-com/amadeus/digital/cli/test/WireMockExtensions.class
-com/amadeus/digital/cli/commands/TestGitHub.class
-com/amadeus/digital/cli/commands/TestVersion.class
