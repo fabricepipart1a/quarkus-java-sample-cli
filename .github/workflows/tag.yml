@@ -1,9 +1,7 @@
-name: Release quarkus-java-sample-cli
+name: Tag quarkus-java-sample-cli
 
 on:
   create:
-
-
 
 jobs:
 
