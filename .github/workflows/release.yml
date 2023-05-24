@@ -1,13 +1,14 @@
 name: Release quarkus-java-sample-cli
 
 on:
-  push:
-    tags:
-      - '*'
+  create:
+
+
 
 jobs:
 
   build-linux:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,6 +38,7 @@ jobs:
             distributions/quarkus-java-sample-cli-*.tgz
 
   build-win64:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -66,6 +68,7 @@ jobs:
             distributions/quarkus-java-sample-cli-*.tgz
 
   build-macos:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
