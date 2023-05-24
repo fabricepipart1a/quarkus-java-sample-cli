@@ -9,9 +9,11 @@ on:
       - "main"
 
 jobs:
-
   ci:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.arch }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -40,4 +42,4 @@ jobs:
           REPO: fabricepipart/mgp-timings
         run: |
           mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
-          mvn -B -U clean verify
+          mvn -B -U clean verify -Pnative-container

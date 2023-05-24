@@ -38,16 +38,16 @@ public class Commit extends CommandWithHelp implements Callable<Integer> {
   }
 
   @Override
-  public Integer call() throws Exception {
-    String ghApiOwner = configuration.ghApiOwner;
+  public Integer call() {
+    String ghCommitApiOwner = configuration.ghApiOwner;
     if (owner != null) {
-      ghApiOwner = owner;
+      ghCommitApiOwner = owner;
     }
-    String ghApiRepo = configuration.ghApiRepo;
+    String ghCommitApiRepo = configuration.ghApiRepo;
     if (repository != null) {
-      ghApiRepo = repository;
+      ghCommitApiRepo = repository;
     }
-    List<GitHubCommit> commits = client.commits(ghApiOwner, ghApiRepo);
+    List<GitHubCommit> commits = client.commits(ghCommitApiOwner, ghCommitApiRepo);
     if (commits == null || commits.isEmpty()) {
       log.error("Could not find any commit");
       return CommandLine.ExitCode.SOFTWARE;

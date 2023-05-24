@@ -38,16 +38,16 @@ public class Branch extends CommandWithHelp implements Callable<Integer> {
   }
 
   @Override
-  public Integer call() throws Exception {
-    String ghApiOwner = configuration.ghApiOwner;
+  public Integer call() {
+    String ghBranchApiOwner = configuration.ghApiOwner;
     if (owner != null) {
-      ghApiOwner = owner;
+      ghBranchApiOwner = owner;
     }
-    String ghApiRepo = configuration.ghApiRepo;
+    String ghBranchApiRepo = configuration.ghApiRepo;
     if (repository != null) {
-      ghApiRepo = repository;
+      ghBranchApiRepo = repository;
     }
-    List<GitHubBranch> branches = client.branches(ghApiOwner, ghApiRepo);
+    List<GitHubBranch> branches = client.branches(ghBranchApiOwner, ghBranchApiRepo);
     if (branches == null || branches.isEmpty()) {
       log.error("Could not find any branch");
       return CommandLine.ExitCode.SOFTWARE;
