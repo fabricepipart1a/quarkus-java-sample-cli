@@ -42,6 +42,13 @@ jobs:
         run: |
           mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
           mvn -B -U clean verify
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: ${{ github.event_name != 'pull_request' }}
+        env:
+          VERSION: ${{ steps.compute_version.outputs.new_tag }}
+        with:
+          commit_message: Tag new version ${{ env.VERSION }}
+          file_pattern: '**/pom.xml'
       - name: Push tag
         if: ${{ github.event_name != 'pull_request' }}
         id: tag_version
