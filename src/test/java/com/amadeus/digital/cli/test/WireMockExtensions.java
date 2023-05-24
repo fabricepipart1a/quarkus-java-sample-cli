@@ -32,7 +32,7 @@ public class WireMockExtensions implements QuarkusTestResourceLifecycleManager {
   }
 
   private void stubBranches() {
-    stubFor(get(urlEqualTo("/fabricepipart1a/kubernetes-plugin/branches"))
+    stubFor(get(urlEqualTo("/fabricepipart1a/quarkus-java-sample-cli/branches"))
             .willReturn(aResponse()
                     .withHeader("Content-Type", "application/json")
                     .withBodyFile("branches.json")));
@@ -47,7 +47,7 @@ public class WireMockExtensions implements QuarkusTestResourceLifecycleManager {
   }
 
   private void stubCommits() {
-    stubFor(get(urlEqualTo("/fabricepipart1a/kubernetes-plugin/commits"))
+    stubFor(get(urlEqualTo("/fabricepipart1a/quarkus-java-sample-cli/commits"))
             .willReturn(aResponse()
                     .withHeader("Content-Type", "application/json")
                     .withBodyFile("commits.json")));

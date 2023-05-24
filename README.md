@@ -1,6 +1,4 @@
-# dodo CLI
-
-![dodo CLI](doc/dodo.png)
+# Quarkus Sample CLI
 
 ## Why ?
 
