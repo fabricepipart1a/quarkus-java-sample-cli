@@ -16,6 +16,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TAG_PAT_TOKEN }}
       - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
@@ -49,13 +51,4 @@ jobs:
         with:
           commit_message: Tag new version ${{ env.VERSION }}
           file_pattern: 'pom.xml'
-      - name: Push tag
-        if: ${{ github.event_name != 'pull_request' }}
-        id: tag_version
-        uses: anothrNick/github-tag-action@1.66.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.TAG_PAT_TOKEN }}
-          REPO_OWNER: fabricepipart1a
-          RELEASE_BRANCHES: main
-          DEFAULT_BRANCH: main
-          DRY_RUN: false
+          tagging_message: ${{ env.VERSION }}
