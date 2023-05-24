@@ -44,6 +44,8 @@
     <os-plugin.version>1.7.1</os-plugin.version>
     <surefire.version>3.0.0-M7</surefire.version>
     <jacoco.version>0.8.8</jacoco.version>
+    <sonar.organization>fabricepipart1a</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -245,12 +247,10 @@
         </property>
       </activation>
       <properties>
-        <quarkus.container-image.username>${env.AR_USER}</quarkus.container-image.username>
         <quarkus.native.graalvm-home>${project.build.directory}/mandrel-java11-${mandrel.docker.version}
         </quarkus.native.graalvm-home>
         <quarkus.docker.dockerfile-native-path>${basedir}/src/main/docker/Dockerfile.native
         </quarkus.docker.dockerfile-native-path>
-        <quarkus.container-image.password>${env.AR_PASSWORD}</quarkus.container-image.password>
         <quarkus.container-image.image>com/amadeus/digital/samplecli:${project.version}
         </quarkus.container-image.image>
         <quarkus.container-image.push>true</quarkus.container-image.push>
@@ -311,101 +311,6 @@
       <properties>
         <executable-suffix>.exe</executable-suffix>
       </properties>
-    </profile>
-    <profile>
-      <id>release</id>
-      <properties>
-        <jreleaser.select.current.platform>true</jreleaser.select.current.platform>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.jreleaser</groupId>
-            <artifactId>jreleaser-maven-plugin</artifactId>
-            <version>${jreleaser.version}</version>
-            <executions>
-              <execution>
-                <id>native-binaries</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>upload</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <jreleaser>
-                <release>
-                  <generic>
-                    <owner>Amadeus</owner>
-                    <skipTag>true</skipTag>
-                    <skipRelease>true</skipRelease>
-                    <token>not-used-but-mandatory</token>
-                  </generic>
-                </release>
-                <distributions>
-                  <samplecli>
-                    <type>NATIVE_IMAGE</type>
-                    <artifacts>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-linux-x86_64.zip</path>
-                        <platform>linux-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-windows-x86_64.zip
-                        </path>
-                        <platform>windows-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-osx-x86_64.zip</path>
-                        <platform>osx-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-osx-aarch_64.zip</path>
-                        <platform>osx-aarch_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-linux-x86_64.tgz</path>
-                        <platform>linux-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-windows-x86_64.tgz
-                        </path>
-                        <platform>windows-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-osx-x86_64.tgz</path>
-                        <platform>osx-x86_64</platform>
-                      </artifact>
-                      <artifact>
-                        <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-osx-aarch_64.tgz</path>
-                        <platform>osx-aarch_64</platform>
-                      </artifact>
-                    </artifacts>
-                  </samplecli>
-                </distributions>
-                <upload>
-                  <artifactory>
-                    <rnd-artifactory>
-                      <active>ALWAYS</active>
-                      <host>https://repository</host>
-                      <authorization>BASIC</authorization>
-                      <username></username>
-                      <password></password>
-                      <repositories>
-                        <acs>
-                          <active>ALWAYS</active>
-                          <path>${ar.bin.repo}/{{projectName}}/{{projectVersion}}/{{artifactFile}}</path>
-                          <fileTypes>ZIP,TGZ</fileTypes>
-                        </acs>
-                      </repositories>
-                    </rnd-artifactory>
-                  </artifactory>
-                </upload>
-              </jreleaser>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 </project>
