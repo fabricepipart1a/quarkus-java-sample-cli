@@ -1,9 +1,9 @@
 name: Release quarkus-java-sample-cli
 
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types: [ published ]
+
 jobs:
 
   build-linux:
