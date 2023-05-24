@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>${os.detected.classifier}</id>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <formats>
+    <format>zip</format>
+    <format>tgz</format>
+  </formats>
+  <files>
+    <file>
+      <source>${project.build.directory}/${project.build.finalName}-runner${executable-suffix}</source>
+      <destName>${project.build.finalName}${executable-suffix}</destName>
+    </file>
+  </files>
+</assembly>
