@@ -1,0 +1,14 @@
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/Main.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/client/GitHubBranch.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/gh/Commit.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/Version.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/client/GitHubCommit.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/GitHub.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/Say.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/CommandWithHelp.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/Configuration.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/business/GreetService.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/say/Hello.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/client/GitHubClient.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/gh/Branch.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/main/java/com/amadeus/digital/cli/commands/say/Goodbye.java

@@ -1,0 +1,6 @@
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/commands/gh/TestCommit.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/commands/TestVersion.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/test/WireMockExtensions.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/commands/TestGitHub.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/commands/TestSay.java
+/home/runner/work/quarkus-java-sample-cli/quarkus-java-sample-cli/src/test/java/com/amadeus/digital/cli/commands/TestMain.java
