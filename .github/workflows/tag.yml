@@ -1,7 +1,10 @@
-name: Tag quarkus-java-sample-cli
+name: release
 
 on:
-  create:
+  workflow_run:
+    workflows: [ "tag-and-test" ]
+    types:
+      - completed
 
 jobs:
 

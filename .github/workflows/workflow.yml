@@ -1,4 +1,4 @@
-name: Test quarkus-java-sample-cli
+name: tag-and-test
 
 on:
   pull_request:
@@ -29,6 +29,7 @@ jobs:
       new_tag: ${{ steps.compute_version.outputs.new_tag }}
 
   ci:
+    if: ${{ github.event_name == 'pull_request' }}
     needs: versioning
     runs-on: ubuntu-latest
     steps:
