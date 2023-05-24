@@ -48,6 +48,7 @@ jobs:
           VERSION: ${{ steps.compute_version.outputs.new_tag }}
         with:
           commit_message: Tag new version ${{ env.VERSION }}
+          file_pattern: 'pom.xml'
       - name: Push tag
         if: ${{ github.event_name != 'pull_request' }}
         id: tag_version
