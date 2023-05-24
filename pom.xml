@@ -240,68 +240,6 @@
       </build>
     </profile>
     <profile>
-      <id>native-ci</id>
-      <activation>
-        <property>
-          <name>env.JENKINS_INSTANCE_ENV</name>
-        </property>
-      </activation>
-      <properties>
-        <quarkus.native.graalvm-home>${project.build.directory}/mandrel-java11-${mandrel.docker.version}
-        </quarkus.native.graalvm-home>
-        <quarkus.docker.dockerfile-native-path>${basedir}/src/main/docker/Dockerfile.native
-        </quarkus.docker.dockerfile-native-path>
-        <quarkus.container-image.image>com/amadeus/digital/samplecli:${project.version}
-        </quarkus.container-image.image>
-        <quarkus.container-image.push>true</quarkus.container-image.push>
-        <quarkus.container-image.build>false</quarkus.container-image.build>
-        <quarkus.package.type>native</quarkus.package.type>
-        <assembly.skipAssembly>false</assembly.skipAssembly>
-      </properties>
-      <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>com.googlecode.maven-download-plugin</groupId>
-              <artifactId>download-maven-plugin</artifactId>
-              <version>1.6.8</version>
-              <executions>
-                <execution>
-                  <id>install-mandrel</id>
-                  <phase>initialize</phase>
-                  <goals>
-                    <goal>wget</goal>
-                  </goals>
-                  <configuration>
-                    <url>
-                      remote/mandrel-${mandrel.docker.version}/mandrel-java11-linux-amd64-${mandrel.docker.version}.tar.gz
-                    </url>
-                    <unpack>true</unpack>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                  </configuration>
-                </execution>
-              </executions>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-        <plugins>
-          <plugin>
-            <groupId>com.googlecode.maven-download-plugin</groupId>
-            <artifactId>download-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>install-mandrel</id>
-                <phase>initialize</phase>
-                <goals>
-                  <goal>wget</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>dist-windows</id>
       <activation>
         <os>

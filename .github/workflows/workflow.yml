@@ -52,7 +52,7 @@ jobs:
 
   build-linux:
     needs: versioning
-    runs-on: ubuntu-latest
+    runs-on: ubuntu
     steps:
       - uses: actions/checkout@v3
       - uses: graalvm/setup-graalvm@v1
@@ -73,13 +73,17 @@ jobs:
         run: |
           mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
           mvn -B -U clean verify -Pnative-local
-
-
-
+      - name: Upload native executable
+        uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          files: |
+            distributions/quarkus-java-sample-cli-*.zip
+            distributions/quarkus-java-sample-cli-*.tgz
 
   build-win64:
     needs: versioning
-    runs-on: windows-latest
+    runs-on: windows
     steps:
       - uses: actions/checkout@v3
       - uses: graalvm/setup-graalvm@v1
@@ -98,15 +102,22 @@ jobs:
         env:
           VERSION: ${{ needs.versioning.outputs.new_tag }}
         run: |
-          mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
+          mvn -B -U versions:set -DnewVersion=${{ env.VERSION }}
           mvn -B -U clean verify -Pnative-local
+      - name: Upload native executable
+        uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          files: |
+            distributions/quarkus-java-sample-cli-*.zip
+            distributions/quarkus-java-sample-cli-*.tgz
 
 
 
 
   build-macos:
     needs: versioning
-    runs-on: macos-latest
+    runs-on: [ macOS , ARM64 ]
     steps:
       - uses: actions/checkout@v3
       - uses: graalvm/setup-graalvm@v1
@@ -127,5 +138,12 @@ jobs:
         run: |
           mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
           mvn -B -U clean verify -Pnative-local
+      - name: Upload native executable
+        uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          files: |
+            distributions/quarkus-java-sample-cli-*.zip
+            distributions/quarkus-java-sample-cli-*.tgz
 
 
