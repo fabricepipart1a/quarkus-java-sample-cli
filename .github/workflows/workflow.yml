@@ -11,6 +11,7 @@ on:
 jobs:
 
   versioning:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Bump version and push tag
@@ -27,6 +28,7 @@ jobs:
 
   ci:
     needs: versioning
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
