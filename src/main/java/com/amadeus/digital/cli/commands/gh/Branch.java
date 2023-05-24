@@ -17,10 +17,11 @@ import java.util.concurrent.Callable;
 @CommandLine.Command(name = "branch", description = "Lists branches of the repository in conf")
 public class Branch extends CommandWithHelp implements Callable<Integer> {
 
-  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository")
+  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository where the branches are")
   public String owner;
 
-  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository")
+  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository where to look for " +
+          "the branches")
   public String repository;
 
   private final GitHubClient client;

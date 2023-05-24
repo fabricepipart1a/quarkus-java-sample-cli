@@ -4,10 +4,10 @@ import com.amadeus.digital.cli.CommandWithHelp;
 import com.amadeus.digital.cli.Main;
 import com.amadeus.digital.cli.business.GreetService;
 import io.quarkus.arc.log.LoggerName;
+import jakarta.inject.Inject;
 import org.jboss.logging.Logger;
 import picocli.CommandLine;
 
-import jakarta.inject.Inject;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(name = "goodbye", description = "Say you're leaving")
@@ -19,10 +19,11 @@ public class Goodbye extends CommandWithHelp implements Callable<Integer> {
   @CommandLine.Option(names = {"-t", "--times"}, defaultValue = "1", description = "Should we repeat?")
   public int times;
 
-  @CommandLine.Option(names = {"-f", "--fail"}, description = "Makes the command fail")
+  @CommandLine.Option(names = {"-f", "--fail"}, description = "Makes the command fail to say Goodbye")
   public boolean fail;
 
-  @CommandLine.Option(names = {"-e", "--exclamation"}, help = true, description = "Just a message or an exclamation?")
+  @CommandLine.Option(names = {"-e", "--exclamation"}, help = true, description = "Just a goodbye message or an " +
+          "exclamation?")
   public boolean exclamation;
 
   @Inject
@@ -33,7 +34,7 @@ public class Goodbye extends CommandWithHelp implements Callable<Integer> {
   GreetService greetService;
 
   @Override
-  public Integer call() throws Exception {
+  public Integer call() {
     greetService.sayGoodbye(who, times, exclamation);
     if (fail) {
       console.error("You asked to fail");

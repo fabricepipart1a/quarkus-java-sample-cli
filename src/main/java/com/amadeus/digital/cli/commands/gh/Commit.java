@@ -17,10 +17,11 @@ import java.util.concurrent.Callable;
 @CommandLine.Command(name = "commit", description = "Lists commits")
 public class Commit extends CommandWithHelp implements Callable<Integer> {
 
-  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository")
+  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository where the commits are")
   public String owner;
 
-  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository")
+  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository containing the " +
+          "commits")
   public String repository;
 
   private final GitHubClient client;
