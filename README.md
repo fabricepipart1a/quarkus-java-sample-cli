@@ -14,7 +14,7 @@ are Multi channel: you can use them on your laptop, in a docker container, in yo
 
 OK coding in Java is great. OK CLIs are great. But that CLI had to be packaged as a simple binary. And it needed a great
 framework in order to be easy to code and easy to test. That's where the Quarkus framework comes to help. To learn more
-about the technical foundations of `dodo`, please have a look at [the framework documentation](doc/framework.md)
+about the technical foundations of `samplecli`, please have a look at [the framework documentation](doc/framework.md)
 
 ## What can I do with samplecli?
 
@@ -32,7 +32,7 @@ The easiest way to use the CLI is to use its docker container:
 
 ```bash
 # replace x.x.x with the latest Bitbucket tag of this repository
-docker run -it com/amadeus/digital/samplecli::x.x.x -h
+docker run -it amadeus/samplecli:x.x.x -h
 Usage: samplecli [-V] [COMMAND]
   -V, --version   display version info
 Commands:
@@ -47,8 +47,13 @@ Commands:
 Another way to execute `samplecli` is to directly run its binary. As it is native you must download the corresponding
 binary for your Operating System (Windows, Mac or Linux).
 
-<TODO> a word about publications of all architectures
-<TODO> a word about where to download them
+TODO: a word about publications of all architectures
+
+TODO: a word about where to download them
+
+TODO: Java 17 and GraalVM 22.3
+
+TODO: Docker image multiarch
 
 ## Configuration
 
@@ -62,14 +67,14 @@ Here are the most important configuration options:
 | System property name                       | Environment variable name                  | Usage                                                                                                                                                                                                              |
 |--------------------------------------------|--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `quarkus.log.level`                        | `QUARKUS_LOG_LEVEL`                        | Set the value to DEBUG to benefit from debug logs of quarkus                                                                                                                                                       |
-| `quarkus.log.category."com.amadeus".level` | `QUARKUS_LOG_CATEGORY__COM_AMADEUS__LEVEL` | Set the value to DEBUG to benefit from debug logs of dodo <br> ( [see Quarkus logging doc](https://quarkus.io/guides/logging#quarkus-log-logging-log-config_quarkus.log.categories-logging-categories) for syntax) |
+| `quarkus.log.category."com.amadeus".level` | `QUARKUS_LOG_CATEGORY__COM_AMADEUS__LEVEL` | Set the value to DEBUG to benefit from debug logs of samplecli <br> ( [see Quarkus logging doc](https://quarkus.io/guides/logging#quarkus-log-logging-log-config_quarkus.log.categories-logging-categories) for syntax) |
 | `quarkus.rest-client.gh.url`               | `QUARKUS_REST_CLIENT_GH_URL`               | URL to connect to GitHub API                                                                                                                                                                                       |
 | `samplecli.gh.client.owner`                           | `SAMPLECLI_GH_CLIENT_OWNER`                | Owner of the repository that will be targeted for the GitHub API calls                                                                                                                                             |
 | `samplecli.gh.client.repo`                           | `SAMPLECLI_GH_CLIENT_REPO`                 | Repository that will be targeted for the GitHub API calls                                                                                                                                                          |
 
-## Development of dodo
+## Development of samplecli
 
-To learn more about how to contribute to `dodo`, please have a look at [the developer documentation](contribute.md)
+To learn more about how to contribute to `samplecli`, please have a look at [the developer documentation](contribute.md)
 
 ## Legal
 

@@ -6,7 +6,7 @@
   <groupId>com.amadeus.digital</groupId>
   <artifactId>quarkus-java-sample-cli</artifactId>
   <version>0.0.13</version>
-  <description>quarkus-java-smaple-cli - a CLI to help you</description>
+  <description>quarkus-java-sample-cli - a CLI to help you</description>
   <inceptionYear>2022</inceptionYear>
   <url>https://github.com/fabricepipart1a/quarkus-java-sample-cli</url>
   <developers>
@@ -222,7 +222,7 @@
       <id>native-container</id>
       <properties>
         <quarkus.container-image.name>samplecli</quarkus.container-image.name>
-        <quarkus.container-image.group>com/amadeus/digital</quarkus.container-image.group>
+        <quarkus.container-image.group>amadeus</quarkus.container-image.group>
         <quarkus.docker.dockerfile-native-path>${basedir}/src/main/docker/Dockerfile.native
         </quarkus.docker.dockerfile-native-path>
         <quarkus.native.container-runtime>docker</quarkus.native.container-runtime>
@@ -248,6 +248,22 @@
       </activation>
       <properties>
         <executable-suffix>.exe</executable-suffix>
+      </properties>
+    </profile>
+    <profile>
+      <id>push-image</id>
+      <activation>
+        <property>
+          <name>env.AR_USER</name>
+        </property>
+      </activation>
+      <properties>
+        <quarkus.container-image.username>${env.AR_USER}</quarkus.container-image.username>
+        <quarkus.container-image.password>${env.AR_PASSWORD}</quarkus.container-image.password>
+        <quarkus.container-image.image>
+          ${env.AR_URL}/${env.AR_REPO}/amadeus/samplecli:${project.version}
+        </quarkus.container-image.image>
+        <quarkus.container-image.push>true</quarkus.container-image.push>
       </properties>
     </profile>
   </profiles>

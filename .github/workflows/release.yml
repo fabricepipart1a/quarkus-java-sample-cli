@@ -28,8 +28,12 @@ jobs:
       - name: Build Maven and Docker
         env:
           VERSION: ${{ github.ref_name }}
+          AR_USER: ${{ github.actor }}
+          AR_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          AR_URL: ghcr.io
+          AR_REPO: ${{ github.repository }}
         run: |
-          mvn -B -U clean verify -Pnative-local
+          mvn -B -U clean verify -Pnative-container
       - name: Upload native executable
         uses: softprops/action-gh-release@v1
         with:
