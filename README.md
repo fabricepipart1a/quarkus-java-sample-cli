@@ -62,8 +62,6 @@ Today, 3 binaries are built using GitHub Actions in the repository:
 Each binary is attached in a `tgz` and in a `zip` archive attached to the release that can be
 found [here](https://github.com/fabricepipart1a/quarkus-java-sample-cli/releases).
 
-TODO: Java 17 and GraalVM 22.3
-
 ## Configuration
 
 ![Icon](doc/quarkus_icon_rgb_256px_default.png)
