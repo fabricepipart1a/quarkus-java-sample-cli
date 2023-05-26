@@ -42,7 +42,7 @@
     <wiremock.version>2.35.0</wiremock.version>
     <mockito.version>4.9.0</mockito.version>
     <os-plugin.version>1.7.1</os-plugin.version>
-    <surefire.version>3.0.0-M7</surefire.version>
+    <surefire.version>3.1.0</surefire.version>
     <jacoco.version>0.8.8</jacoco.version>
     <sonar.organization>fabricepipart1a</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
