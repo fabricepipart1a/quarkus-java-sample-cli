@@ -7,6 +7,7 @@ on:
     types: [ opened, synchronize, reopened ]
 jobs:
   build:
+    if: ${{ !contains(github.event.head_commit.message, 'Tag new version') }}
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
