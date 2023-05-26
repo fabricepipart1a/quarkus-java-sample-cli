@@ -289,11 +289,9 @@ Here are all the Maven plugins that you can find in the `pom.xml` and their just
 |Plugin|Justification|
 |---|---|
 | `quarkus`|The must have plugin to benefit from the Quarkus framework that is the base of this framework|
-| `artifactory`|To take full benefits of Artifactory when we deploy|
 | `assembly`|Used for the distribution of native binaries to rename them and compress them in a zip file|
 | `os`|It is actually an extension. It helps us detecting the OS on which the build is executed. Useful to setup native compilation properly.|
 | `jacoco`|Used to monitor the coverage of all tests types if this application. Configured to be compatible with the maven workflow too. This can serve [as a reference](https://quarkus.io/guides/tests-with-coverage)|
-| `jreleaser`|Used to publish the native binaries artefacts taht otherwise Maven does not pick|
 
 ### Profiles
 
@@ -308,9 +306,3 @@ Here are all the profiles that you can find in the `pom.xml` and their justifica
 |`release`|To adapt the Artifactory repositories (production level) that are used during deployment. To be used on the release branch of the main repository.|
 |`dist-windows`|Activates automatically when running a native compilation on Windows to accommodate with the fact that Windows binaries have the `.exe` extension.|
 
-## Jenkinsfile
-
-The CI is done using
-the [Maven workflow](https://rndwww.nce.amadeus.net/confluence/pages/viewpage.action?spaceKey=JPGL&title=Maven+workflow%3A+mvn)
-. Nothing very specific here excepted the need to run Java 11. Please note that `workbench.yaml` also contains some
-parameters of the workflow. Please refer to the workflow documentation for details.
