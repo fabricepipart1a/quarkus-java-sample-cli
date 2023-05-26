@@ -30,7 +30,7 @@ jobs:
         env:
           VERSION: ${{ github.ref_name }}
           AR_USER: ${{ github.actor }}
-          AR_PASSWORD: ${{ secrets.PUSH_PAT_TOKEN }}
+          AR_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           AR_URL: ghcr.io
           AR_REPO: ${{ github.repository }}
         run: |
