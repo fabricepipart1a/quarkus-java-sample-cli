@@ -261,7 +261,7 @@
         <quarkus.container-image.username>${env.AR_USER}</quarkus.container-image.username>
         <quarkus.container-image.password>${env.AR_PASSWORD}</quarkus.container-image.password>
         <quarkus.container-image.image>
-          ${env.AR_URL}/${env.AR_REPO}/amadeus/samplecli:${project.version}
+          ${env.AR_URL}/${env.AR_REPO}:${project.version}
         </quarkus.container-image.image>
         <quarkus.container-image.push>true</quarkus.container-image.push>
       </properties>
