@@ -4,9 +4,9 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fabricepipart1a_quarkus-java-sample-cli&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fabricepipart1a_quarkus-java-sample-cli)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fabricepipart1a_quarkus-java-sample-cli&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=fabricepipart1a_quarkus-java-sample-cli)
 
-## Why ?
+## Why a CLI?
 
-#### _Why a CLI?_
+![Icon](doc/Paomedia-Small-N-Flat-Terminal.512.png)
 
 We needed to have a product that is fast and easy to maintain. And groovy code can only run in Jenkins. Also, Pipeline
 code is well known to be tedious to code and particularly to test. Java code on the other side is mastered by many
@@ -60,6 +60,8 @@ TODO: Java 17 and GraalVM 22.3
 TODO: Docker image multiarch
 
 ## Configuration
+
+![Icon](doc/quarkus_icon_rgb_256px_default.png)
 
 Since *samplecli* is based on the Quarkus framework, there are plenty of way to configure the application. The most
 notable are System properties and Environment variables.
