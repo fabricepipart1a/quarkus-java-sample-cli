@@ -36,30 +36,33 @@ The easiest way to use the CLI is to use its docker container:
 
 ```bash
 # replace x.x.x with the latest Bitbucket tag of this repository
-docker run -it amadeus/samplecli:x.x.x -h
+docker run -it ghcr.io/fabricepipart1a/quarkus-java-sample-cli:x.x.x help
 Usage: samplecli [-V] [COMMAND]
   -V, --version   display version info
 Commands:
   github   Interacts with GitHub
   say      Just some examples of subcommands
   version  Displays the version of the CLI
-
 ```
+
+You can find a list of the published Docker images for
+samplecli [here](https://github.com/fabricepipart1a/quarkus-java-sample-cli/pkgs/container/quarkus-java-sample-cli).
 
 ### Native executable
 
 Another way to execute `samplecli` is to directly run its binary. As it is native you must download the corresponding
 binary for your Operating System (Windows, Mac or Linux).
 
-TODO: a word about publications of all architectures
+Today, 3 binaries are built using GitHub Actions in the repository:
 
-TODO: a word about where to download them
+* a x86_64 binary for linux
+* a x86_64 binary for Windows
+* a x86_64 binary for Mac (we'll add aarch64 when corresponding GitHub runners will be available)
+
+Each binary is attached in a `tgz` and in a `zip` archive attached to the release that can be
+found [here](https://github.com/fabricepipart1a/quarkus-java-sample-cli/releases).
 
 TODO: Java 17 and GraalVM 22.3
-
-TODO: Docker image multiarch
-
-TODO: docker pull as anonymous
 
 ## Configuration
 
