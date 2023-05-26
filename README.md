@@ -1,5 +1,9 @@
 # Quarkus Sample CLI
 
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=fabricepipart1a_quarkus-java-sample-cli&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=fabricepipart1a_quarkus-java-sample-cli)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fabricepipart1a_quarkus-java-sample-cli&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fabricepipart1a_quarkus-java-sample-cli)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fabricepipart1a_quarkus-java-sample-cli&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=fabricepipart1a_quarkus-java-sample-cli)
+
 ## Why ?
 
 #### _Why a CLI?_
