@@ -6,7 +6,7 @@
 
 To compile and run this app you will need:
 
-- JDK 11
+- JDK 17
 - Maven 3.8+
 
 ### How to build locally
@@ -66,7 +66,7 @@ impacted by your live changes, just type `r`.
 
 To compile and run this demo you will need:
 
-- JDK 11+
+- JDK 17+
 - GraalVM (See the [Building a Native Executable guide](https://quarkus.io/guides/building-native-image-guide)
   for help setting up your environment.)
 

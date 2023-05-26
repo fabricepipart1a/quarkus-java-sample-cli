@@ -24,10 +24,10 @@
 
   <properties>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
-    <mandrel.docker.version>22.2.0.0-Final</mandrel.docker.version>
+    <mandrel.docker.version>22.3</mandrel.docker.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
@@ -206,7 +206,7 @@
         <quarkus.container-image.build>true</quarkus.container-image.build>
         <quarkus.native.container-build>true</quarkus.native.container-build>
         <quarkus.native.builder-image>
-          quay.io/quarkus/ubi-quarkus-mandrel-builder-image:${mandrel.docker.version}-java11
+          quay.io/quarkus/ubi-quarkus-mandrel-builder-image:${mandrel.docker.version}-java17
         </quarkus.native.builder-image>
         <quarkus.package.type>native</quarkus.package.type>
         <quarkus.container-image.tag>${project.version}</quarkus.container-image.tag>
