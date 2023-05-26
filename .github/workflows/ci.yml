@@ -38,6 +38,7 @@ jobs:
           REPO_OWNER: fabricepipart1a
           RELEASE_BRANCHES: main
           DEFAULT_BRANCH: main
+          DEFAULT_BUMP: patch
           DRY_RUN: true
       - name: Build Maven and Docker
         env:
