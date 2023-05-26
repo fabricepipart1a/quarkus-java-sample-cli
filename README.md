@@ -59,6 +59,8 @@ TODO: Java 17 and GraalVM 22.3
 
 TODO: Docker image multiarch
 
+TODO: docker pull as anonymous
+
 ## Configuration
 
 ![Icon](doc/quarkus_icon_rgb_256px_default.png)
