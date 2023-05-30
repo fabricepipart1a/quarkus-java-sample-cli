@@ -42,7 +42,7 @@ public class Branch extends GitHubCommand implements Callable<Integer> {
       return CommandLine.ExitCode.SOFTWARE;
     }
     for (GitHubBranch branch : branches) {
-      console.info(branch.name);
+      console.info(branch.name());
     }
     return CommandLine.ExitCode.OK;
   }

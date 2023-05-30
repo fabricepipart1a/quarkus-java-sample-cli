@@ -41,7 +41,7 @@ public class Commit extends GitHubCommand implements Callable<Integer> {
       return CommandLine.ExitCode.SOFTWARE;
     }
     for (GitHubCommit commit : commits) {
-      console.info(commit.sha);
+      console.info(commit.sha());
     }
     return CommandLine.ExitCode.OK;
   }
