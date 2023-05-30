@@ -1,6 +1,5 @@
 package com.amadeus.digital.cli.commands.gh;
 
-import com.amadeus.digital.cli.CommandWithHelp;
 import com.amadeus.digital.cli.Configuration;
 import com.amadeus.digital.cli.Main;
 import com.amadeus.digital.cli.client.GitHubClient;
@@ -15,19 +14,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(name = "commit", description = "Lists commits")
-public class Commit extends CommandWithHelp implements Callable<Integer> {
-
-  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository where the commits are")
-  public String owner;
-
-  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository containing the " +
-          "commits")
-  public String repository;
-
-  private final GitHubClient client;
-  private final Logger log;
-  private final Logger console;
-  private final Configuration configuration;
+public class Commit extends GitHubCommand implements Callable<Integer> {
 
   @Inject
   public Commit(Logger log, @LoggerName(Main.CONSOLE_OUTPUT_LOGGER) Logger console, @RestClient GitHubClient client,

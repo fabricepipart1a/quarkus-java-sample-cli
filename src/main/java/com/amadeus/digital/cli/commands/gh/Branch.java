@@ -1,6 +1,5 @@
 package com.amadeus.digital.cli.commands.gh;
 
-import com.amadeus.digital.cli.CommandWithHelp;
 import com.amadeus.digital.cli.Configuration;
 import com.amadeus.digital.cli.Main;
 import com.amadeus.digital.cli.client.GitHubBranch;
@@ -15,19 +14,8 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(name = "branch", description = "Lists branches of the repository in conf")
-public class Branch extends CommandWithHelp implements Callable<Integer> {
+public class Branch extends GitHubCommand implements Callable<Integer> {
 
-  @CommandLine.Option(names = {"-o", "--owner"}, description = "Owner of the GitHub repository where the branches are")
-  public String owner;
-
-  @CommandLine.Option(names = {"-r", "--repository"}, description = "Name of the GitHub repository where to look for " +
-          "the branches")
-  public String repository;
-
-  private final GitHubClient client;
-  private final Logger log;
-  private final Logger console;
-  private final Configuration configuration;
 
   @Inject
   public Branch(Logger log, @LoggerName(Main.CONSOLE_OUTPUT_LOGGER) Logger console, @RestClient GitHubClient client,
