@@ -23,7 +23,7 @@
   </licenses>
 
   <properties>
-    <compiler-plugin.version>3.11.0</compiler-plugin.version>
+    <compiler-plugin.version>3.12.0</compiler-plugin.version>
     <mandrel.docker.version>22.3</mandrel.docker.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
     <maven.compiler.source>17</maven.compiler.source>
