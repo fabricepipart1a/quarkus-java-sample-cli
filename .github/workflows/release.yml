@@ -36,7 +36,7 @@ jobs:
         run: |
           mvn -B -U clean verify -Pnative-container
       - name: Upload native executable
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             target/distributions/quarkus-java-sample-cli-*.zip
@@ -66,7 +66,7 @@ jobs:
         run: |
           mvn -B -U clean verify -Pnative-local
       - name: Upload native executable
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             target/distributions/quarkus-java-sample-cli-*.zip
@@ -96,7 +96,7 @@ jobs:
         run: |
           mvn -B -U clean verify -Pnative-local
       - name: Upload native executable
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             target/distributions/quarkus-java-sample-cli-*.zip
