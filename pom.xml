@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amadeus.digital</groupId>
   <artifactId>quarkus-java-sample-cli</artifactId>
-  <version>0.4.9</version>
+  <version>0.4.10</version>
   <description>quarkus-java-sample-cli - a CLI to help you</description>
   <inceptionYear>2022</inceptionYear>
   <url>https://github.com/fabricepipart1a/quarkus-java-sample-cli</url>
