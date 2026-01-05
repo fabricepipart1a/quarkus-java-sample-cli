@@ -46,7 +46,7 @@ jobs:
         run: |
           mvn -B -U versions:set -DnewVersion=${VERSION} &> /dev/null
           mvn -B -U clean verify
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         if: ${{ github.event_name != 'pull_request' }}
         env:
           VERSION: ${{ steps.compute_version.outputs.new_tag }}
